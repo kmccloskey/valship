@@ -19,4 +19,4 @@ Create a Rails application for shippers to help them organize all of the ships i
   
 
 ## Group Project
-### Kyle McCloskey
+##### Kyle McCloskey
