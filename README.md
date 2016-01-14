@@ -17,6 +17,11 @@ Create a Rails application for shippers to help them organize all of the ships i
   - cargo description must be at least 50 characters
   - origin and destinations must be pulled from a valid list of locations (use a hard-coded list)
   
+### Adding Rails UJS and Paperclip
+ * Let's add some additional functionality to our "Shipped" app from earlier this week.
+    - Using Rails UJS, allow users to asynchronously "follow" other ships. This means they should be able to click a "follow" button and have the "following" recorded in the database.
+    - A new page should be added where users can see what ships they're currently following
+    - Using Paperclip, users should have the ability to upload a photo of a ship when the ship is being created
 
 ## Group Project
 ##### Kyle McCloskey
