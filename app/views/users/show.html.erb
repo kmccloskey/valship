@@ -1,0 +1,5 @@
+<h1> <%= @user.user_name %>'s Profile</h1>
+
+<% if @current_user %>
+<%= link_to "signout", log_out_path %>
+<%end%>
