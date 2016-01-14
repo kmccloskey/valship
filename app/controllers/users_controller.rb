@@ -1,0 +1,35 @@
+class UsersController < ApplicationController
+  def index
+  	@user = User.all 
+  	@user = User.new
+  end
+
+  def show
+  	@user = User.find(params[:id])
+  end
+
+  def new
+  	@user = User.new
+  end
+
+  def create
+    puts '********'
+    puts params[:user]
+    puts user_params
+  	@user = User.new(user_params)
+    if @user.save
+      session[:user_id]
+      flash[:notice] = "Your account was successfully made!"
+      redirect_to user_path @user
+    else
+      flash[:alert] = "Problem creating your account"
+      redirect_to root_path
+    end
+  end
+
+  private
+
+  def user_params
+  	params.require(:user).permit(:user_name, :password)
+  end
+end
