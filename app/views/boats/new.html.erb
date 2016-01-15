@@ -1,8 +1,14 @@
 <%= content_tag :h1, "New Boat" %>
-<%= form_for @boat do |b| %>
+<%= form_for @boat, :url => boats_path, :html => { :multipart => true } do |b| %>
+<%= b.file_field :avatar %>
 <%= b.label :Name %>
 <%= b.text_field :name %>
 <%= b.label :Current_location %>
 <%= b.text_field :current_l %>
 <%= b.submit :create %>
 <% end %>
+<!-- 
+<%= form_for @boat, :url => boats_path, :html => { :multipart => true } do |form| %>  
+<%= form.file_field :avatar %> 
+<% end %>
+ -->
