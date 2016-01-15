@@ -11,6 +11,7 @@ class BoatsController < ApplicationController
   	puts "*********"
   	@boat = Boat.new(boat_params)
   	if @boat.save
+      current_user.boats.push(@boat)
   		redirect_to boat_path @boat
   		flash[:notice] = "Boat created"
   	else
@@ -34,6 +35,6 @@ class BoatsController < ApplicationController
   private
 
   def boat_params
-  	params.require(:boat).permit(:name, :current_l)
+  	params.require(:boat).permit(:name, :current_l, :avatar)
   end
 end

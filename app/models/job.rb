@@ -1,6 +1,6 @@
 class Job < ActiveRecord::Base
-	belongs_to :users
-	belongs_to :boats
+	belongs_to :user
+	belongs_to :boat
 
 def o
 	Boat::LOCATIONS[self.origin]
