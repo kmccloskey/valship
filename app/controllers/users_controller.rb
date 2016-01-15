@@ -6,6 +6,7 @@ class UsersController < ApplicationController
 
   def show
   	@user = User.find(params[:id])
+    @jobs = @user.jobs
   end
 
   def new
@@ -24,8 +25,15 @@ class UsersController < ApplicationController
     else
       flash[:alert] = "Problem creating your account"
       redirect_to root_path
-    end
+    end 
   end
+
+  def destroy
+      @user = User.find(params[:id])
+      @user.destroy
+      session[:user_id]
+      redirect_to root_path
+    end
 
   private
 

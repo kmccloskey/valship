@@ -10,7 +10,7 @@ class BoatsController < ApplicationController
   def create
   	puts "*********"
   	@boat = Boat.new(boat_params)
-  	if @boat.save 
+  	if @boat.save
   		redirect_to boat_path @boat
   		flash[:notice] = "Boat created"
   	else
