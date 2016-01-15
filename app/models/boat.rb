@@ -5,10 +5,12 @@ class Boat < ActiveRecord::Base
 	# validate :current_l,  
 
 	LOCATIONS = ["New York", "China", "India", "South Africa", "Pakistan", "North Pole", "Philadelphia", "Brazil", "Argentina","Neatherlands", "Laos", "Japan", "Columbia", "Cuba"]
+	DESTINATIONS = ["New York", "China", "India", "South Africa", "Pakistan", "North Pole", "Philadelphia", "Brazil", "Argentina","Neatherlands", "Laos", "Japan", "Columbia", "Cuba"]
 
 	def location
 		LOCATIONS[self.current_l]
 	end
+
 
 
 end

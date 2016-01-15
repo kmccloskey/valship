@@ -1,5 +1,21 @@
-<h1> <%= @user.user_name %>'s Profile</h1>
+<h1> <%= @current_user.user_name %>'s Profile</h1>
 
-<% if @current_user %>
+<% if @user.id == @current_user.id %>
 <%= link_to "signout", log_out_path %>
+<% end %>
+
+<% if @user.id == @current_user.id %>
+<%= link_to("Delete", user_path(@user), method: :delete) %>
+<% end %>
+
+<%= tag :br %>
+
+<% @user.jobs.each do |j| %>
+<%= j.origin %>
+<%= j.job_name %>
+<% end %>
+
+<% @user.boats.each do |b| %>
+<%= b.name %>
+<%= b.current_l %>
 <% end %>

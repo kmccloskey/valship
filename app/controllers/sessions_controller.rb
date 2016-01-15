@@ -16,12 +16,6 @@ class SessionsController < ApplicationController
     end
   end
 
-  def new_admin
-  end
-
-  def create_admin
-  end
-
   def destroy
     session[:user_id] = nil
     redirect_to root_path

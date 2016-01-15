@@ -11,6 +11,7 @@ class JobsController < ApplicationController
   	puts "********"
   	@job = Job.new(job_params)
   	if @job.save 
+      current_user.jobs.push(@job)
   		redirect_to job_path @job
   		flash[:notice] = "Job created"
   	else
@@ -21,6 +22,14 @@ class JobsController < ApplicationController
 
   def edit
   	@job = Job.find(params[:id])
+  end
+
+  def update
+    puts "**********"
+    puts params
+    @job = Job.new(job_params)
+    @job.save
+    redirect_to job_path @job
   end
 
   def index

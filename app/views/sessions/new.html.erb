@@ -5,7 +5,7 @@
 <%= text_field_tag :user_name %>
 <%= label_tag :Password %>
 <%= password_field_tag :password %>
-<%= submit_tag :Sign_In, :value => "Sign In" %>
+<%= submit_tag :Sign_In, :value => "Sign In", method: :user_login %>
 <% end %>
 
 <% if @current_user %>
