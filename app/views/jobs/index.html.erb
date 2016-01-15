@@ -1,0 +1,12 @@
+<%= content_tag :h1, "Jobs" %>
+
+<% @job.each do |j| %>
+<%= j.job_name %>	
+<%= j.job_description %>	
+<%= j.origin %>	
+<%= j.destination %>	
+<%= j.containers %>	
+<%= j.cargo %>	
+<%= j.cost %>
+<br>
+<% end %>	

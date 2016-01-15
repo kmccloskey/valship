@@ -1,0 +1,8 @@
+<%= content_tag :h1, "New Boat" %>
+<%= form_for @boat do |b| %>
+<%= b.label :Name %>
+<%= b.text_field :name %>
+<%= b.label :Current_location %>
+<%= b.text_field :current_l %>
+<%= b.submit :create %>
+<% end %>

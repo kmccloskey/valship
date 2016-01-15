@@ -1,0 +1,7 @@
+<%= content_tag :h1, "Boats" %>
+
+<% @boat.each do |b| %>
+<%= b.name %>
+<%= b.current_l %>
+<br>
+<% end %>
