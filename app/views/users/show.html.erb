@@ -9,6 +9,15 @@
 <% end %>
 
 <%= tag :br %>
+<%= link_to("New Boat", new_boat_path, method: :get) %>
+<%= tag :br %>
+<%= link_to("New Job", new_job_path, method: :get) %>
+<%= tag :br %>
+<%= link_to("View All Boats", boats_path, method: :get) %>
+<%= tag :br %>
+<%= link_to("View All Jobs", jobs_path, method: :get) %>
+<%= tag :br %>
+<%= link_to("View All Users", users_path, method: :get) %>
 
 <% @user.jobs.each do |j| %>
 <%= j.origin %>
