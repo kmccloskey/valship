@@ -18,13 +18,14 @@
 <%= link_to("View All Jobs", jobs_path, method: :get) %>
 <%= tag :br %>
 <%= link_to("View All Users", users_path, method: :get) %>
-
+<%= tag :br %>
 <% @user.jobs.each do |j| %>
 <%= j.origin %>
 <%= j.job_name %>
 <% end %>
-
+<%= tag :br %>
 <% @user.boats.each do |b| %>
 <%= b.name %>
 <%= b.current_l %>
 <% end %>
+
