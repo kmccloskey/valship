@@ -1,17 +1,25 @@
 <%= form_for @job do |j| %>
 <%= j.label :Job_Name %>
 <%= j.text_field :job_name %>
+<%= tag :br %>
 <%= j.label :Job_description %>
 <%= j.text_field :job_description %>
+<%= tag :br %>
 <%= j.label :Origin %>
-<%= j.text_field :origin %>
+<%= j.select(:origin, Boat::LOCATIONS) %>
+<%= tag :br %>
 <%= j.label :Destination %>
-<%= j.text_field :destination %>
+<%= j.select(:destination, Boat::DESTINATIONS) %>
+<%= tag :br %>
 <%= j.label :Containers %>
 <%= j.text_field :containers %>
+<%= tag :br %>
 <%= j.label :Cargo %>
 <%= j.text_field :cargo %>
+<%= tag :br %>
 <%= j.label :Cost %>
 <%= j.text_field :cost %>
+<%= tag :br %>
 <%= j.submit :create %>
 <% end %>
+
