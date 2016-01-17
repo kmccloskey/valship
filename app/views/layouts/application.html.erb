@@ -5,9 +5,27 @@
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"> </script>
 </head>
 <body>
+<%= content_tag :div, class: 'nav_bar' do -%>
+	<% if @current_user == nil %>
+	<ul>
+		<li><%= link_to "Sign Up", new_user_path %></li>
+		<li><%= link_to "Sign In", root_path %></li>
+	</ul>
+	<% end %>
+	<% if @current_user != nil %>
+	<ul>
+		<li><%= link_to "My Profile", user_path(@current_user.id) %></li>
+		<li><%= link_to "New Job", new_job_path %></li>
+		<li><%= link_to "New Boat", new_boat_path %></li>
+		<li><%= link_to "All Jobs", jobs_path %></li>
+		<li><%= link_to "All Boats", boats_path %></li>
+	</ul>
+	<% end %>
 
+<% end -%>
 <%= yield %>
 
 </body>
