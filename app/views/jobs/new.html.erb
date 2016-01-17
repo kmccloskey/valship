@@ -6,10 +6,10 @@
 <%= j.text_field :job_description %>
 <%= tag :br %>
 <%= j.label :Origin %>
-<%= j.select(:origin, Boat::LOCATIONS) %>
+<%= j.select(:origin, (Boat::LOCATIONS).each_with_index.map {|x,i| [x, i]}) %>
 <%= tag :br %>
 <%= j.label :Destination %>
-<%= j.select(:destination, Boat::DESTINATIONS) %>
+<%= j.select(:destination, (Boat::DESTINATIONS).each_with_index.map {|x,i| [x, i]}) %>
 <%= tag :br %>
 <%= j.label :Containers %>
 <%= j.text_field :containers %>
