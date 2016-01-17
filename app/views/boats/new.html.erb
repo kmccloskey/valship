@@ -4,6 +4,6 @@
 <%= b.label :Name %>
 <%= b.text_field :name %>
 <%= b.label :Current_location %>
-<%= b.select(:current_l, Boat::LOCATIONS) %>
+<%= b.select(:current_l, (Boat::LOCATIONS).each_with_index.map {|x,i| [x, i]}) %>
 <%= b.submit :create %>
 <% end %>
