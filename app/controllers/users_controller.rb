@@ -14,17 +14,14 @@ class UsersController < ApplicationController
   end
 
   def create
-    puts '********'
-    puts params[:user]
-    puts user_params
   	@user = User.new(user_params)
     if @user.save
       session[:user_id]
-      flash[:notice] = "Your account was successfully made!"
       redirect_to user_path @user
+      flash[:notice] = "Your account was successfully made!"
     else
-      flash[:alert] = "Problem creating your account"
       redirect_to root_path
+      flash[:alert] = "Problem creating your account"
     end 
   end
 
