@@ -1,6 +1,7 @@
 class JobsController < ApplicationController
   def new
   	@job = Job.new
+    @boats = Boat.all
   end
 
   def show

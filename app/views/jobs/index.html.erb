@@ -1,12 +1,26 @@
 <%= content_tag :h1, "Jobs" %>
 
 <% @job.each do |j| %>
-<%= j.job_name %>	
-<%= j.job_description %>	
-<%= j.origin %>	
-<%= j.destination %>	
-<%= j.containers %>	
-<%= j.cargo %>	
+<%= tag :br %>
+Name:
+<%= j.job_name %>
+<%= tag :br %>
+Description:
+<%= j.job_description %>
+<%= tag :br %>
+Origin:
+<%= j.text_origin %>
+<%= tag :br %>
+Destination:
+<%= j.destination %>
+<%= tag :br %>
+Containers:
+<%= j.containers %>
+<%= tag :br %>
+Cargo:
+<%= j.cargo %>
+<%= tag :br %>
+Cost:
 <%= j.cost %>
-<br>
+<%= tag :br %>
 <% end %>	
