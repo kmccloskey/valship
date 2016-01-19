@@ -30,7 +30,11 @@ class UsersController < ApplicationController
       @user.destroy
       session[:user_id]
       redirect_to root_path
-    end
+  end
+
+  def follow_boat
+    @user = user.find(params[:boat_id])
+  end
 
   private
 

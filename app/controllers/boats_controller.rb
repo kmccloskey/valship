@@ -1,4 +1,4 @@
-class BoatsController < ApplicationController
+ class BoatsController < ApplicationController
   def new
   	@boat = Boat.new
   end
@@ -29,7 +29,7 @@ class BoatsController < ApplicationController
   end
 
   def destroy
-  	
+  	@boat = Boat.destroy(params[:id])
   end
 
   private

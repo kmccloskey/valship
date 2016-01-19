@@ -1,7 +1,10 @@
 <%= content_tag :h1, "Boats" %>
 
 <% @boat.each do |b| %>
+<%= content_tag :h2 do %>
 <%= b.name %>
 <%= b.current_l %>
-<br>
+<%= link_to "delete", boat_path(b.id),method: :delete, remote: true, class: "delete-boat " %> 
+<% tag :br %>
+<% end %>
 <% end %>

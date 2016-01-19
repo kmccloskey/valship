@@ -1,7 +1,12 @@
 <%= content_tag :h1, "Users" %>
 
 <% @users.each do |u| %>
-<h1>
+<%= content_tag :h1 do %>
 <%= u.user_name %>
-</h1>
+<% tag :br %>
+<%= link_to "Follow", follow_boat_path(boat_id: @boat.id), method: :post, remote: true, confirm: "Are you sure you want to follow this boat?" %>
 <% end %>
+<% end %>
+
+
+

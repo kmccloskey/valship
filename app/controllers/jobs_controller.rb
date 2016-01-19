@@ -36,6 +36,10 @@ class JobsController < ApplicationController
   	@job = Job.all
   end
 
+  def destroy
+    @job = Job.find(params[:id]).destroy
+  end
+
   private
 
   def job_params

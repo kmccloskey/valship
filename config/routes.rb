@@ -14,6 +14,7 @@ Rails.application.routes.draw do
 
   delete 'sessions/destroy' => 'session#destroy', as: :log_out
 
+  post '/add_boat' => "users#follow_boat" 
 
   resources :users, :boats, :jobs
 

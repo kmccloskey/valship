@@ -1,6 +1,7 @@
 <%= content_tag :h1, "Jobs" %>
 
 <% @job.each do |j| %>
+<%= content_tag :h3 do %>
 <%= j.job_name %>	
 <%= j.job_description %>	
 <%= j.origin %>	
@@ -8,5 +9,6 @@
 <%= j.containers %>	
 <%= j.cargo %>	
 <%= j.cost %>
-<br>
+<%= link_to "delete", job_path(j.id),method: :delete, remote: true, class: "delete-job " %>
+<% end %>
 <% end %>	

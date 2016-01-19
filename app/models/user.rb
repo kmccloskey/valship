@@ -5,4 +5,8 @@ class User < ActiveRecord::Base
 
 	has_many :jobs
 	has_many :boats, through: :jobs
+
+	has_many :users_follow_ships
+	has_many :followed_boats, source: :boat, through: :users_follow_ships
+
 end
