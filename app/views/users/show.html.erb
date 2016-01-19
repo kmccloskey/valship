@@ -9,24 +9,18 @@
 <% end %>
 
 <%= tag :br %>
-<%= link_to("New Boat", new_boat_path, method: :get) %>
-<%= tag :br %>
-<%= link_to("New Job", new_job_path, method: :get) %>
-<%= tag :br %>
-<%= link_to("View All Boats", boats_path, method: :get) %>
-<%= tag :br %>
-<%= link_to("View All Jobs", jobs_path, method: :get) %>
-<%= tag :br %>
-<%= link_to("View All Users", users_path, method: :get) %>
-<%= tag :br %>
+
 <% @user.jobs.each do |j| %>
-<%= j.origin %>
+<%= j.text_origin %>
+...
 <%= j.job_name %>
+<%= tag :br %>
 <% end %>
 <%= tag :br %>
 <% @user.boats.each do |b| %>
 <%= b.name %>
-<%= b.current_l %>
+...
+<%= b.location %>
 <%= tag :br %>
 <% end %>
 
